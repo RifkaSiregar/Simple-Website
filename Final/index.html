@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  
+</head>
+  <body>
+    <div class="overlay">
+      <div class="alert">
+        <h2>Please enter your name:</h2>
+        <form id="name-form">
+          <input type="text" id="name-input" placeholder="Enter your name" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="content">
+      <h1>Hi <span id="name-placeholder"></span>, Welcome to Website</h1>
+    </div>
+    <div class="container">
+
+      <!-- Navbar -->
+      <nav class="navbar center sticky">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="profile.html" class="navbar-link">Profile</a>
+        <a href="portfolio.html" class="navbar-link">Portfolio</a>
+        <a href="message_us.html" class="navbar-link">Message Us</a>
+      </nav>
+
+      <!-- End of Navbar -->
+
+      <!-- Section 1 -->
+      <section class="section-1 center" id="section-1">
+        <h1 class="section-1-heading">
+          Web Developer
+        </h1>
+        <img src="images/pict.png" alt="RifkaSiregar" class="person-img" />
+        <h3 class="person-name">Rifka Siregar</h3>
+      </section>
+      <!-- End of Section 1 -->
+     
+    </div>
+
+    <script>
+      window.onload = function() {
+  var overlay = document.querySelector('.overlay');
+  var nameForm = document.querySelector('#name-form');
+  var nameInput = document.querySelector('#name-input');
+  var namePlaceholder = document.querySelector('#name-placeholder');
+  var content = document.querySelector('.content');
+
+  nameForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = nameInput.value;
+    namePlaceholder.innerText = name;
+    overlay.style.display = 'none';
+    content.style.display = 'block';
+  });
+};
+
+    </script>
+  </body>
+</html>
